@@ -3,14 +3,15 @@ const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
-
+const cors = require('cors');
 const userRoute=require("./routes/userRoute.js");
-
+app.use(cors());
 
 // middleware
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
+
 
 
 mongoose.connect(process.env.URL)
