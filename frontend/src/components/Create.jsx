@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -7,6 +8,7 @@ const Create = () => {
   const [email, setEmail] = useState('');
   const [age, setAge] = useState();
   const [error, setError] = useState("");
+  const navigate=useNavigate();
 
   console.log(name, email, age);
   const handleSubmit = async (e) => {
@@ -31,6 +33,7 @@ const Create = () => {
       setEmail('');
       setAge(0);
       setError('');
+      navigate("/all")
     }
   };
 
