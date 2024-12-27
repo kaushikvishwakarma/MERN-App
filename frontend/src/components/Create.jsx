@@ -39,10 +39,10 @@ const Create = () => {
 
   return (
     <div className='container my-2'>
-      {error && <div class="alert alert-danger">{error}</div>}
-      <h2 className='text-center'>Enter the date</h2>
+      {error && <div className="alert alert-danger text-center">{error}</div>}
+      <h2 className='text-center mb-4'>Enter the Data</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="shadow p-4 rounded">
         <div className="mb-3">
           <label className="form-label">Name</label>
           <input type="text" className="form-control"

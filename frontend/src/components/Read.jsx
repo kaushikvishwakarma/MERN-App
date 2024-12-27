@@ -53,22 +53,22 @@ const handleDelete = async (id)=>{
 
   return (
     <div className="container my-2">
-      {error && <div class="alert alert-danger"> {error} </div>}
-      <h2 className='text-center'>All Data</h2>
+      {error && <div className="alert alert-danger text-center">{error}</div>}
+      <h2 className='text-center mb-4'>All Data</h2>
       <div className="row">
-        {data?.map((ele) => (<div key={ele._id} className='col-3'>
-            <div className="card">
+        {data?.map((ele) => (
+          <div key={ele._id} className='col-3 mb-3'>
+            <div className="card shadow-sm">
               <div className="card-body">
                 <h5 className="card-title">{ele.name}</h5>
                 <h6 className="card-subtitle mb-2 text-body-secondary">{ele.email}</h6>
                 <p className="text-muted">{ele.age}</p>
-                <a className="card-link" onClick={()=>{handleDelete(ele._id)}}>Delete</a>
+                <a className="card-link text-danger" onClick={() => { handleDelete(ele._id) }}>Delete</a>
                 <Link to={`/${ele._id}`} className="card-link">Edit{" "}</Link>
               </div>
             </div>
           </div>
-      ))}
-
+        ))}
       </div>
     </div>
   )
