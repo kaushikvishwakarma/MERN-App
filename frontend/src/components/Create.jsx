@@ -42,7 +42,7 @@ const Create = () => {
       {error && <div class="alert alert-danger">{error}</div>}
       <h2 className='text-center'>Enter the date</h2>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Name</label>
           <input type="text" className="form-control"
@@ -64,7 +64,7 @@ const Create = () => {
           {console.log(age)}
         </div>
 
-        <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+        <button type="submit" className="btn btn-primary" >Submit</button>
       </form>
     </div>
   )

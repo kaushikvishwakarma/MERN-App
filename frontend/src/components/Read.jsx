@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 const Read = () => {
   const [data, setData] = useState([]);
@@ -35,7 +36,7 @@ const handleDelete = async (id)=>{
     setTimeout(()=>{
       setError("Deleted Successfully");
       getData();
-    },2000)
+    },1000)
     return;
   }
 
@@ -62,7 +63,7 @@ const handleDelete = async (id)=>{
                 <h6 className="card-subtitle mb-2 text-body-secondary">{ele.email}</h6>
                 <p className="text-muted">{ele.age}</p>
                 <a className="card-link" onClick={()=>{handleDelete(ele._id)}}>Delete</a>
-                <a className="card-link">Edit{" "}</a>
+                <Link to={`/${ele._id}`} className="card-link">Edit{" "}</Link>
               </div>
             </div>
           </div>
