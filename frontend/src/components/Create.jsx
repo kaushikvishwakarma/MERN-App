@@ -9,12 +9,12 @@ const Create = () => {
   const [age, setAge] = useState();
   const [error, setError] = useState("");
   const navigate=useNavigate();
-
+  const apiurl = "https://mern-app-y3l7.onrender.com";
   console.log(name, email, age);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const adduser = { name, email, age }
-    const response = await fetch("http://localhost:5000", {
+    const response = await fetch(apiurl, {
       method: 'POST',
       body: JSON.stringify(adduser),
       headers: {

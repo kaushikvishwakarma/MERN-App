@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+const apiurl = "https://mern-app-y3l7.onrender.com";
+
 const Update = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -10,8 +12,9 @@ const Update = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   
+  
   const getSingleUser = async () => {
-    const response = await fetch(`http://localhost:5000/${id}`)
+    const response = await fetch(`${apiurl}/${id}`)
 
     const result = await response.json();
 
@@ -37,7 +40,7 @@ useEffect(() => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     const updatedUser = { name, email, age }
-    const response = await fetch(`http://localhost:5000/${id}`, {
+    const response = await fetch(`${apiurl}/${id}`, {
       method: 'PATCH',
       body: JSON.stringify(updatedUser),
       headers: {

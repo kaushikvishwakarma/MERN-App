@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const Read = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState();
-
+  const apiurl = "https://mern-app-y3l7.onrender.com";
   async function getData() {
-    const response = await fetch("http://localhost:5000");
+    const response = await fetch(apiurl);
     const result = await response.json();
 
     if (!response.ok) {
@@ -20,7 +20,7 @@ const Read = () => {
   }
 // This is control all delete operations 
 const handleDelete = async (id)=>{
-  const response=await fetch(`http://localhost:5000/${id}`,{
+  const response=await fetch(`${apiurl}/${id}`,{
     method:"DELETE"
   });
   const result = await response.json();
