@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Read = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState();
-  const apiurl = "https://mern-app-y3l7.onrender.com";
+  const apiurl = "http://localhost:5000";
   async function getData() {
     const response = await fetch(apiurl);
     const result = await response.json();

@@ -9,7 +9,7 @@ const Create = () => {
   const [age, setAge] = useState();
   const [error, setError] = useState("");
   const navigate=useNavigate();
-  const apiurl = "https://mern-app-y3l7.onrender.com";
+  const apiurl = "http://localhost:5000";
   console.log(name, email, age);
   const handleSubmit = async (e) => {
     e.preventDefault();

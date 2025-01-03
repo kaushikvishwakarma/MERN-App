@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-const apiurl = "https://mern-app-y3l7.onrender.com";
+const apiurl = "http://localhost:5000";
 
 const Update = () => {
   const [name, setName] = useState('');
